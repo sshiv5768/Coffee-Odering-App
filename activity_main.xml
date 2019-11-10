@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@drawable/png">
+
+    <TextView
+        android:id="@+id/qu_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QUANTITY"
+        android:textSize="23dp"
+        android:paddingLeft="16dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="46dp"
+            android:text="-"
+            android:textSize="23dp"
+            android:onClick="Decrement"
+             />
+
+        <TextView
+            android:id="@+id/quantity_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="25dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="46dp"
+            android:text="+"
+            android:onClick="Increment"
+            android:textSize="23dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:text="ORDER SUMMARY"
+        android:textStyle="bold"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/price_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$ 0"
+        android:textSize="25dp"
+        android:layout_below="@id/price"
+        android:layout_marginLeft="16dp"
+        android:paddingLeft="16dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/price_text_view"
+        android:text="ORDER"
+        android:textSize="23dp"
+        android:paddingTop="20dp"
+        android:padding="10dp"
+        android:onClick="submitOrder"
+        android:layout_marginLeft="16dp" />
+
+
+</LinearLayout>
