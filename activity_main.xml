@@ -1,83 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@drawable/png">
+    android:layout_width="match_parent"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/qu_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="QUANTITY"
-        android:textSize="23dp"
-        android:paddingLeft="16dp"
-        android:textStyle="bold" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/png">
 
-        <Button
-            android:layout_width="48dp"
-            android:layout_height="46dp"
-            android:text="-"
-            android:textSize="23dp"
-            android:onClick="Decrement"
-             />
-
-        <TextView
-            android:id="@+id/quantity_text_view"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/name_id"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="25dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:textStyle="bold"
+            android:orientation="vertical"
+            android:layout_margin="15dp"
+            android:hint="Name"
+            android:inputType="textCapCharacters"
             />
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TOPPINGS"
+            style="@style/CustomText"
+            android:paddingLeft="16dp"
+            />
+        <CheckBox
+            android:id="@+id/Whipped_cream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="23dp"
+            android:text="Whipped Cream"
+            android:textStyle="italic"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            />
+        <CheckBox
+            android:id="@+id/Chocolate_cream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="23dp"
+            android:text="Chocolate Cream"
+            android:textStyle="italic"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            />
+
+
+        <TextView
+            android:id="@+id/qu_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QUANTITY"
+            style="@style/CustomText"
+            android:paddingLeft="16dp"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="46dp"
+                android:text="-"
+                android:textSize="23dp"
+                android:onClick="Decrement"
+                android:layout_marginLeft="20dp"
+                 />
+
+            <TextView
+                android:id="@+id/quantity_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="25dp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textStyle="bold"
+                />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="46dp"
+                android:text="+"
+                android:onClick="Increment"
+                android:textSize="23dp"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:text="ORDER SUMMARY"
+            style="@style/CustomText"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/price_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ 0"
+            android:textSize="25dp"
+            android:layout_below="@id/price"
+            android:layout_marginLeft="16dp"
+            android:paddingLeft="16dp"
+            android:layout_marginTop="10dp"/>
+
         <Button
-            android:layout_width="48dp"
-            android:layout_height="46dp"
-            android:text="+"
-            android:onClick="Increment"
-            android:textSize="23dp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price_text_view"
+            android:text="ORDER"
+            android:textSize="23dp"
+            android:paddingTop="20dp"
+            android:padding="10dp"
+            android:onClick="submitOrder"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"/>
+
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:text="ORDER SUMMARY"
-        android:textStyle="bold"
-        android:textSize="25dp" />
-
-    <TextView
-        android:id="@+id/price_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$ 0"
-        android:textSize="25dp"
-        android:layout_below="@id/price"
-        android:layout_marginLeft="16dp"
-        android:paddingLeft="16dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/price_text_view"
-        android:text="ORDER"
-        android:textSize="23dp"
-        android:paddingTop="20dp"
-        android:padding="10dp"
-        android:onClick="submitOrder"
-        android:layout_marginLeft="16dp" />
-
-
-</LinearLayout>
+</ScrollView>
